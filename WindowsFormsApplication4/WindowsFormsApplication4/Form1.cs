@@ -16,6 +16,9 @@ namespace WindowsFormsApplication4
         public double firstNumb;
         public double secondNumb;
         public string action;
+        public double result;
+        public double save;
+        public double recall;
         public Form1()
         {
             InitializeComponent();
@@ -33,13 +36,28 @@ namespace WindowsFormsApplication4
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            secondNumb = double.Parse(textBox1.Text);
+            switch (action)
+            {
+                case "/": {
+                        if (secondNumb != 0)
+                            result = (firstNumb / secondNumb);
+                        else
+                            result = 0;
+                    };break;
+                case "*": result = (firstNumb * secondNumb); break;
+                case "-": result = (firstNumb - secondNumb); break;
+                case "+": result = (firstNumb + secondNumb); break;
+            }
+            textBox1.Text = result.ToString();
+            firstNumb = 0;
+            secondNumb = 0;
         }
 
 
         private void button18_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "0";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -107,7 +125,7 @@ namespace WindowsFormsApplication4
 
         private void button24_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = recall.ToString();
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -182,12 +200,15 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            recall = result;
+            save = result;
+            result = 0;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "0";
+            save += result;
         }
         public void SetNumb(string s)
         {
