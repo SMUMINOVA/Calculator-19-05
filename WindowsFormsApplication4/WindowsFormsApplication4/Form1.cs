@@ -12,7 +12,6 @@ namespace WindowsFormsApplication4
 {
     public partial class Form1 : Form
     {
-        public List<double> array;
         public double firstNumb;
         public double secondNumb;
         public string action;
@@ -74,6 +73,11 @@ namespace WindowsFormsApplication4
         private void button18_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
+            firstNumb = 0;
+            secondNumb = 0;
+            save = 0;
+            result = 0;
+            action = "";
         }
         private void button25_Click(object sender, EventArgs e)
         {
